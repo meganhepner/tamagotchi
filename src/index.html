@@ -2,8 +2,40 @@
 <html>
   <head>
     <script type="text/javascript" src="bundle.js"></script>
-    <title>Project Name</title>
+    <title>Tamagotchi</title>
   </head>
   <body>
+    <div class="show">
+      <form id="name">
+        <label for="tamagotchi">Enter a name for your Tamagotchi!</label>
+        <input id="tamagotchi" class="form-control" type="text">
+        <button type="button" class="btn btn-primary" id="start">Play!</button>
+      </form>
+    </div>
+    <div class="flex container hide" id="tamagotchi-info">
+      <div>
+        <h1 id="tamagotchi-name"></h1>
+        <h6>Tamagotchi</h6>
+      </div>
+      <div>
+        <h1 id="hunger-level"></h1>
+        <h6>Hunger Level</h6>
+        <button type="button" class="btn btn-primary" id="feed">Feed your Tamagotchi!</button>
+      </div>
+      <div>
+        <h1 id="play-level"></h1>
+        <h6>Play Level</h6>
+        <button type="button" class="btn btn-primary" id="play">Play with your Tamagotchi!</button>
+      </div>
+      <div>
+        <h1 id="sleep-level"></h1>
+        <h6>Sleep Level</h6>
+        <button type="button" class="btn btn-primary" id="sleep">Put your Tamagotchi to bed!</button>
+      </div>
+    </div>
+    <div class="hide" id="death">
+      <h1>Your Tamagotchi has died!</h1>
+      <button type="button" class="btn btn-primary" id="refresh">Try Again!</button>
+    </div>
   </body>
 </html>
