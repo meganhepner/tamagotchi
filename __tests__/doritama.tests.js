@@ -18,7 +18,7 @@ describe('doritama', () => {
   });
 
   test('should push tamagotchi into doritama array', () => {
-    doritama.addTamagotchi();
+    doritama.tamagotchis.push(tamagotchi, tamagotchi2);
     expect(doritama.tamagotchis).toHaveLength(2);
     console.log(doritama.tamagotchis);
   });

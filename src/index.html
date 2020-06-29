@@ -6,10 +6,13 @@
   </head>
   <body>
     <div class="show">
+      <button type="button" class="btn btn-primary" id="start">Start your Doritama!</button>
+    </div>
+    <div>
       <form id="name">
         <label for="tamagotchi">Enter a name for your Tamagotchi!</label>
         <input id="tamagotchi" class="form-control" type="text">
-        <button type="button" class="btn btn-primary" id="start">Play!</button>
+        <button type="button" class="btn btn-primary" id="add">Add a Tamagotchi to your Doritama!</button>
       </form>
     </div>
     <div class="flex container hide" id="tamagotchi-info">
@@ -37,5 +40,8 @@
       <h1>Your Tamagotchi has died!</h1>
       <button type="button" class="btn btn-primary" id="refresh">Try Again!</button>
     </div>
+    <div id="tamagotchis">
+    </div>
+
   </body>
 </html>

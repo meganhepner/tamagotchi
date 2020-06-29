@@ -3,20 +3,30 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import $ from "jquery";
 
+import { Doritama } from './../src/doritama.js';
 import { Tamagotchi } from './../src/tamagotchi.js';
 
 $(document).ready(function() {
   
+  let doritama;
   let tamagotchi;
-  
+
   $("button#start").click(function() {
-    
+
+    doritama = new Doritama;
+    $(".show").hide();
+  });
+  
+  $("button#add").click(function() {
+
     tamagotchi = new Tamagotchi($("input#tamagotchi").val());
     tamagotchi.setHunger();
     tamagotchi.setPlay();
     tamagotchi.setSleep();
+    doritama.tamagotchis.push(tamagotchi);
 
     $("#tamagotchi-name").text(tamagotchi.name);
+    $("#tamagotchis").append(`<button type="button" class="btn btn-primary">${tamagotchi.name}</button>`)
 
     setInterval(function() {
       if (tamagotchi.food > 7) {
@@ -52,7 +62,6 @@ $(document).ready(function() {
       tamagotchi.isExhausted();
     }, 1000);
   
-    $(".show").hide();
     $("#tamagotchi-info").show();
   });
 
