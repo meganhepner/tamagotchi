@@ -8,25 +8,27 @@ export class Tamagotchi {
     this.foodStatus = "";
     this.playStatus = "";
     this.sleepStatus = "";
+    this.hungerInterval;
+    this.playInterval;
+    this.sleepInterval;
+    this.deathInterval;
+    this.death;
   }
 
   setHunger() {
-    setInterval(() => {
+    this.hungerInterval = setInterval(() => {
       this.food--;
     }, 1000);
-    if (this.food === 0) {
-      clearInterval()
-    }
   }
 
   setPlay() {
-    setInterval(() => {
+    this.playInterval = setInterval(() => {
       this.play--;
     }, 1000);
   }
 
   setSleep() {
-    setInterval(() => {
+    this.sleepInterval = setInterval(() => {
       this.sleep--;
     }, 1000);
   }
@@ -47,6 +49,10 @@ export class Tamagotchi {
     if (this.food > 0) {
       return this.starved = false;
     } else {
+      clearInterval(this.hungerInterval);
+      clearInterval(this.playInterval);
+      clearInterval(this.sleepInterval);
+      clearInterval(this.deathInterval);
       return this.starved = true;
     }
   }
@@ -55,6 +61,10 @@ export class Tamagotchi {
     if (this.play > 0) {
       return this.neglected = false;
     } else {
+      clearInterval(this.hungerInterval);
+      clearInterval(this.playInterval);
+      clearInterval(this.sleepInterval);
+      clearInterval(this.deathInterval);
       return this.neglected = true;
     }
   }
@@ -63,6 +73,10 @@ export class Tamagotchi {
     if (this.sleep > 0) {
       return this.exhausted = false;
     } else {
+      clearInterval(this.hungerInterval);
+      clearInterval(this.playInterval);
+      clearInterval(this.sleepInterval);
+      clearInterval(this.deathInterval);
       return this.exhausted = true;
     }
   }
